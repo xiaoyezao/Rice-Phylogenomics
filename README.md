@@ -8,22 +8,21 @@ The output then can be used as input for plotting in the R package syntenet (htt
 The whole pipeline is represented in the jupyter notebook; python3.x and pandans module are required to run the scripts
 
 #### 1. run GENESPACE on your genomes, and use the following settings in **query_pangenes()** to output pangenome:
->
->pangenome <- query_pangenes(
-  >gsParam,
-  >bed = NULL,
-  >refGenome = Reference,
-  >transform = TRUE,
-  >showArrayMem = FALSE,
-  >showNSOrtho = FALSE,
-  >maxMem2Show = Inf,
-  >showUnPlacedPgs = FALSE
->)
-
+```R
+pangenome <- query_pangenes(
+  gsParam,
+  bed = NULL,
+  refGenome = Reference,
+  transform = TRUE,
+  showArrayMem = FALSE,
+  showNSOrtho = FALSE,
+  maxMem2Show = Inf,
+  showUnPlacedPgs = FALSE)
+```
 #### 2. With the pangene table generated from GENESPACE, run SynCluster to identify syntenic gene clusters 
 
->
->import os
+```python
+import os
 import pandas as pd
 from modules import prefix_cell,pangenome_cleaner,parse_pangenome
 
