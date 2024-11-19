@@ -5,8 +5,11 @@ The code was used in our rice genome evolution [paper](https://doi.org/10.1101/2
 
 The output then can be used as input for plotting in the R package [syntenet](https://github.com/almeidasilvaf/syntenet).
 
-The whole pipeline is represented in the jupyter notebook; Only python3 and pandans module are required to run the scripts; for how to run GENESPACE, please visit [Genespace](https://github.com/jtlovell/GENESPACE)
+### Installation
+The whole pipeline is represented in the jupyter notebook; Only python3 and pandans module are required to run the scripts; for how to install and run GENESPACE, please visit [Genespace](https://github.com/jtlovell/GENESPACE)
 
+### Example
+The computed rice pangenome data is used as an example to demonstrate the pipeline
 #### 1. run GENESPACE on your genomes, and use the following settings in **query_pangenes()** to output pangenome:
 ```R
 pangenome <- query_pangenes(
