@@ -1,12 +1,13 @@
 # SynNet-Py
-The code was used in our rice genome evolution [paper](https://doi.org/10.1101/2024.05.29.596369) to generate microsynteny gene clusters. The main function is:
+The code was used in our rice genome evolution [paper](https://doi.org/10.1101/2024.05.29.596369) to generate microsynteny gene clusters and to make phylogeny based on the clusters. The main function is:
 1) to process and clean the pangene table from GENESPACE;
-2) to identify syntenic gene clusters
+2) to identify syntenic gene clusters;
+3) to infer gene trees and species phylogeny
 
-The output then can be used as input for plotting in the R package [syntenet](https://github.com/almeidasilvaf/syntenet).
+The output can be further used as input for plotting in the R package [syntenet](https://github.com/almeidasilvaf/syntenet).
 
 ### Installation
-The whole pipeline is represented in the jupyter notebook; Only python3 and pandans module are required to run the scripts; for how to install and run GENESPACE, please visit [Genespace](https://github.com/jtlovell/GENESPACE)
+For The whole pipeline is represented in the jupyter notebook; Only python3 and pandans module are required to run the scripts; for how to install and run GENESPACE, please visit [Genespace](https://github.com/jtlovell/GENESPACE)
 
 ### Example
 The computed rice pangenome data is used as an example to demonstrate the pipeline
