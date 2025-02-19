@@ -1,4 +1,4 @@
-# SynNet-Py
+# Rice Phylogenomics
 The code was used in our rice genome evolution [paper](https://doi.org/10.1101/2024.05.29.596369) to generate microsynteny gene clusters and to make phylogeny based on the clusters. The main function is:
 1) to process and clean the pangene table from GENESPACE;
 2) to identify syntenic gene clusters;
