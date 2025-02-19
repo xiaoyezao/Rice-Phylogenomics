@@ -1,6 +1,8 @@
 import os
 import pandas as pd
 from itertools import combinations
+from Bio import SeqIO
+from Bio.SeqRecord import SeqRecord
 
 def prefix_cell(cell, header):
     if pd.notna(cell) and cell.strip():  # Check for non-empty and non-whitespace cells
@@ -141,3 +143,25 @@ def parse_pangenome(pangenome,all,syn,synnet):
     f2.close()
     f3.close()
     f4.close()
+
+def prepare_fasta_from_synCluster(synnet,fasta):
+    "after synnet analysis, we get wide formate synnet data: ClusterID\tsynnet_members;"
+    "from here, we want to generate fasta file for each Cluster (synteny constrained HOGs ??), and then use this fasta files to do phylogenomic analysis"
+    dic = {}
+    dic_ = {}
+    for record in SeqIO.parse(fasta, "fasta"):
+        dic_[record.id] = record.seq
+    for line in open(synnet,'r'):
+        line = line.strip()
+        if not line.startswith("Cluster"):
+            cluster = line.split("\t")[0]
+            gene_list = line.split("\t")[1].split(",")
+            dic[cluster] = gene_list
+    for key in dic.keys():
+        sequence = []
+        file_name = key + ".fasta"
+        genes = dic[key]
+        for gene in genes:
+            new_record = SeqRecord(dic_[gene],gene)
+            sequence.append(new_record)
+        SeqIO.write(sequence, file_name, "fasta")
