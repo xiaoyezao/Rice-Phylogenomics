@@ -2,9 +2,7 @@
 The code was used in our rice genome evolution [paper](https://doi.org/10.1101/2024.05.29.596369) to generate microsynteny gene clusters and to make phylogeny based on the clusters. The main function is:
 1) to process and clean the pangene table from GENESPACE;
 2) to identify syntenic gene clusters;
-3) to infer gene trees and species phylogeny
-
-The output can be further used as input for plotting in the R package [syntenet](https://github.com/almeidasilvaf/syntenet).
+3) to infer gene trees and phylogeny of (sub)genomes
 
 ### Installation
 For The whole pipeline is represented in the jupyter notebook; Only python3 and pandans module are required to run the scripts; for how to install and run GENESPACE, please visit [Genespace](https://github.com/jtlovell/GENESPACE)
