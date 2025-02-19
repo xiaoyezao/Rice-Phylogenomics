@@ -5,7 +5,7 @@ The code was used in our rice genome evolution [paper](https://doi.org/10.1101/2
 3) to infer gene trees and phylogeny of (sub)genomes
 
 ### Installation
-The whole pipeline is organised in Jupyter notebook; Python3 and Pandans are required to run the scripts; In addition, the following tools need to be callable from working envitonment: [GENESPACE ](https://github.com/jtlovell/GENESPACE), [MAFFT](https://mafft.cbrc.jp/alignment/server/index.html), [trimAl](https://trimal.cgenomics.org/), [IQ-TREE](http://www.iqtree.org/), and [Astral-Pro](https://github.com/chaoszhang/A-pro)
+Python3 and Pandans are required to run the scripts; In addition, the following tools need to be callable from working envitonment: [GENESPACE ](https://github.com/jtlovell/GENESPACE), [MAFFT](https://mafft.cbrc.jp/alignment/server/index.html), [trimAl](https://trimal.cgenomics.org/), [IQ-TREE](http://www.iqtree.org/), and [Astral-Pro](https://github.com/chaoszhang/A-pro)
 
 ### Example
 The computed rice pangenome data is used as an example to demonstrate the pipeline
