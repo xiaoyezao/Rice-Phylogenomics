@@ -25,10 +25,6 @@ The ouput is a plain text table of all homologous groups identifed by GENESPACE,
 #### 2. With the pangene table generated from GENESPACE, run SynCluster to identify syntenic gene clusters 
 
 ```python
-import os
-import pandas as pd
-from modules import prefix_cell,pangenome_cleaner,parse_pangenome
-
 pangenome = "pangenome.txt"
 all = "pangenome_all.txt"
 syn = "pangenome_syn.txt"
@@ -38,7 +34,19 @@ clean_pangenome = pangenome_cleaner(pangenome)
 parse_pangenome(clean_pangenome,all,syn,synnet)
 ```
 The outputs are three plain text tables: the cleaned homologous groups, the homologous groups with only syntenic genes and the syntenic gene pairs.
-#### 3. explore the syntenic gene clusters in [syntenet](https://github.com/almeidasilvaf/syntenet)
+#### 3. Explore the syntenic gene clusters in [syntenet](https://github.com/almeidasilvaf/syntenet)
 #### 4. Generate FASTA sequences for each syntenic gene cluster
-
+As we have the syntenic clusters generated in step2, now we will extract the protein sequences for each syntenic clusters. 
+```python
+prepare_fasta_from_synCluster(syn,fasta)
+```
+syn is the output from step2, fasta is the protein sequences used in GENESPACE run; 
+Output is the protein sequence in FASTA format, one fasta file for each syntenic cluster
+#### 5. Infer gene tree for each syntenic cluster
+we follow the [pipeline](https://bitbucket.org/yangya/phylogenomic_dataset_construction/src/master/) to make gene tree for each syntenic cluster
+#### 6. Infer a phylogeny based on the gene trees using coalescent algorithm
+```sh
+astral-pro -i $geneTrees -o $genomeTree -t 8 -u 1
+```
+$geneTrees is the tree inferred in last step, and $genomeTree is the coalescent phylogeny of the (sub)genomes
 
