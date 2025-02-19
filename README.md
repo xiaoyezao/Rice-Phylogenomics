@@ -5,7 +5,7 @@ The code was used in our rice genome evolution [paper](https://doi.org/10.1101/2
 3) to infer gene trees and phylogeny of (sub)genomes
 
 ### Installation
-For The whole pipeline is represented in the jupyter notebook; Only python3 and pandans module are required to run the scripts; for how to install and run GENESPACE, please visit [Genespace](https://github.com/jtlovell/GENESPACE)
+The whole pipeline is organised in Jupyter notebook; Python3 and Pandans are required to run the scripts; In addition, the following tools need to be callable from working envitonment: [GENESPACE ](https://github.com/jtlovell/GENESPACE), [MAFFT](https://mafft.cbrc.jp/alignment/server/index.html), [trimAl](https://trimal.cgenomics.org/), [IQ-TREE](http://www.iqtree.org/), and [Astral-Pro](https://github.com/chaoszhang/A-pro)
 
 ### Example
 The computed rice pangenome data is used as an example to demonstrate the pipeline
@@ -39,5 +39,6 @@ parse_pangenome(clean_pangenome,all,syn,synnet)
 ```
 The outputs are three plain text tables: the cleaned homologous groups, the homologous groups with only syntenic genes and the syntenic gene pairs.
 #### 3. explore the syntenic gene clusters in [syntenet](https://github.com/almeidasilvaf/syntenet)
+#### 4. Generate FASTA sequences for each syntenic gene cluster
 
 
